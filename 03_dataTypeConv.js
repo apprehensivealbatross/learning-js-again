@@ -13,3 +13,16 @@
 // ***** operations *** 
 let value = 3
 let negValue = - value
+
+ let str1 = "hello"
+ let str2 = " vishal"
+ let str3 = str1 + str2
+ console.log(str3);
+
+ console.log("1" + 2)
+ console.log("1" + 2 + 2)
+ console.log(1 + 2 + "2");
+ console.log(+true) // no need
+ console.log(+"");
+
+ 
