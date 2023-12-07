@@ -9,6 +9,7 @@ const allHeroes = marvel_heroes.concat(dc_heroes)
 // console.log(allHeroes);
 
 const allNewHeroes =[...marvel_heroes, ...dc_heroes] // better way to join multiple arrays, remember kaach ka glass dropping on the floor and glasses
+// spread operator 
 // // console.log(allNewHeroes);
 
 const anotherArray = [ 1,2,3,[4,5,6],7,[6,7,[4,5]]]
