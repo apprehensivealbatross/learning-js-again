@@ -38,9 +38,33 @@ const obj3 = Object.assign({}, obj1, obj2)
 // ]
 // users[1].email
 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser))
-console.log(tinderUser.hasOwnProperty('isLoggedIn'));
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser))
+// console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
+
+// ++++++//
+// object Destructuring
+ const course = {
+    courseName : "JS in Hindi",
+    price : '999',
+    courseInstructor: 'hitesh'
+ }
+//  course.courseInstructor 
+
+const {courseInstructor: instructor} = course
+// console.log(courseInstructor);
+console.log(instructor);
+
+// {
+//    'name': 'hitesh',
+//     'courseName': 'js in hindi',
+//     'price': 'free'
+// }
+
+[
+    {},
+    {}
+]
