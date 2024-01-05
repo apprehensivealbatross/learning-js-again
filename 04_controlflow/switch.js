@@ -8,7 +8,8 @@
 // }
 
 const month =  3
-switch(month) {
+switch(month) { 
+    //  shift + alt + down arrow
     case 1:
         console.log("January");
         break;
