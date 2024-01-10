@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and Chai</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+        // We traverse a whole DOM tree which increases the time.
+        // purey purey elements pe traversing hoti hai.
+    }
+    addLanguage('Python')
+    addLanguage('TypeScript')
+    
+    function addOptimiLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName)) 
+        // try to prefer appendChild instead of innerHTML for bigger projects
+        document.querySelector('.language').appendChild(li)
+    } 
+    addOptimiLanguage('Golang')
+
+    //Edit
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang.innerText);
+    // secondLang.innerHTML = "Mojo" // not much optimized approach
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>
