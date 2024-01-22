@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 300px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color: grey;">
+    <div class="card">
+        <img id="profilePhoto" src="" alt="" width="100" height="100">
+        <ul id="followersList"></ul>
+        <ul id="followingList"></ul>
+        <button class="showdata">Show Data</button>
+    </div>
+
+    <script>
+       document.querySelector('.showdata').addEventListener('click', function() {
+            const requestURL = "https://api.github.com/users/sudovishal";
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestURL);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    const data = JSON.parse(this.responseText);
+
+                    const profilePhoto = document.getElementById('profilePhoto');
+                    profilePhoto.src = data.avatar_url;
+
+                    const followersList = document.getElementById('followersList');
+                    followersList.innerHTML = `Followers: ${data.followers}`;
+
+                    const followingList = document.getElementById('followingList');
+                    followingList.innerHTML = `Following: ${data.following}`;
+                }
+            };
+            xhr.send();
+        })
+    </script>
+</body>
+</html>
+            <!-- // });
+            // function fetchData() {
+            //     const card = document.querySelector('.card');
+            //     card.style.display = 'none';
+
+            //     const profilePhoto = document.getElementById('profilePhoto');
+            //     profilePhoto.style.display = 'block';
+
+            //     const followersList = document.getElementById('followersList');
+            //     followersList.style.display = 'block';
+
+            //     const followingList = document.getElementById('followingList');
+            //     followingList.style.display = 'block';
+
+
+            // }
+
+           // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+    // const requestURL = "https://api.github.com/users/sudovishal"
+//     const xhr =  new XMLHttpRequest()
+//     xhr.open('GET', requestURL)
+//     xhr.onreadystatechange = function(){
+//     console.log(xhr.readyState);
+//     if(xhr.readyState == 4){
+//         const data = JSON.parse(this.responseText)
+//     console.log(typeof data);
+//         // console.log(data.followers); // current context, used this keyword
+//         console.log(data);
+
+//     }
+// }
+// console.log(xhr.readyState);
+// xhr.send() 
+//         </script>
+//     </body>
+//     </html> -->
