@@ -15,12 +15,13 @@ function User(username, loginCount, isLoggedIn) {
     this.username = username;
     this.loginCount = loginCount
     this.isLoggedIn = isLoggedIn
-this.greeting = function() {
-    console.log(`Welcome ${this.username}`)
+
+    this.greeting = function() {
+        console.log(`Welcome ${this.username}`)
 }
 
 this.hello = function() {
-    console.log(`chutiye`)
+    console.log(`hello test`)
 }
     // return this implicitly happens no need to write again. 
 }
@@ -29,6 +30,7 @@ const userOne = new User("hvishal", 12, true)
 const userTwo = new User("victor", 45, "assas")
 console.log(userTwo.greeting());
 console.log(userOne);
+console.log(userOne.constructor)
 console.log(userOne instanceof User);
 console.log(userTwo instanceof User);
 
