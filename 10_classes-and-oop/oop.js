@@ -23,7 +23,7 @@ function User(username, loginCount, isLoggedIn) {
 this.hello = function() {
     console.log(`hello test`)
 }
-    // return this implicitly happens no need to write again. 
+    // return this  // implicitly happens no need to write again. 
 }
 
 const userOne = new User("hvishal", 12, true)
